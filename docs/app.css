@@ -15,7 +15,6 @@ body{
 	position: relative;
 }
 .bounding-box{
-	position: static;
 	padding: 0 2em;
 }
 h1{
@@ -53,7 +52,11 @@ table td.lantern-panel-offset{
 	outline: none;
 }
 table.spacer-row{
-	/* width: 100%; */
+	width: 100%;
+	max-width: 1864px;
+}
+table#spacer-row-2,table#spacer-row-3{
+	max-width: 846px;
 }
 table td.spacer-row-col{
 	width: 100%;
