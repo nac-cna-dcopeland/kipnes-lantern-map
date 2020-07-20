@@ -136,7 +136,7 @@ function build_table(panel){
 	var styleAttr = "";
 	if (panel.name.indexOf("spacer-row") >= 0){
 		tblClass = "spacer-row";
-		styleAttr = "margin-left:"+panel.config.offset+"px;";
+		styleAttr = "margin-left:"+panel.config.offset+"px;height:8px;";
 	}
 	var id = '<table style="'+styleAttr+'" id="'+panel.name+'" class="'+tblClass+'"><tbody>';
 	var placeholder='10';
@@ -160,7 +160,7 @@ function build_table(panel){
 					}
 				}
 				if (panel.name.indexOf("spacer-row") >= 0){
-					tr += '<td class="lantern-panel noborder spacer-row-col" height="'+getSpacerSize(panel_type)+'"></td>';
+					tr += '<td class="lantern-panel noborder spacer-row-col spacer-col" width="100%" height="'+getSpacerSize(panel_type)+'"></td>';
 				} else {
 					tr += '<td class="lantern-panel" style="max-width:'+panel_dimensions[panel_type].width+'px;" width="'+panel_dimensions[panel_type].width+'" height="'+panel_dimensions[panel_type].height+'">'+panel.config.panels[j]+'</td>';
 				}
@@ -198,6 +198,10 @@ rendered_panels.forEach(rendered_panel => {
 	rendered_panel.setAttribute("data-tippy-content", "x:"+Math.floor(left)+",y:"+Math.floor(top));
 });
 
+const widest_table = document.querySelector("#row-1");
+const widest_table_styles = window.getComputedStyle(widest_table);
+console.log(widest_table_styles.width);
+document.body.style.width = widest_table_styles.width;
 
 tippy('.lantern-panel', {
 	arrow: false,
