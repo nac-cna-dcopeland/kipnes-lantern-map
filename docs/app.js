@@ -185,9 +185,17 @@ for (const [panel_key, panel] of panel_groups_each) {
 }
 
 const rendered_panels = document.querySelectorAll(".lantern-panel");
+const parent_container = document.querySelector(".bounding-box");
+const parent_container_styles = window.getComputedStyle(parent_container);
+const parent_container_pos = document.querySelector(".bounding-box").getBoundingClientRect();
 rendered_panels.forEach(rendered_panel => {
 	//console.log('rendered_panel_coords: x:', rendered_panel.offsetLeft,'y:', rendered_panel.offsetTop);
-	rendered_panel.setAttribute("data-tippy-content", "x:"+Math.floor(rendered_panel.offsetLeft)+",y:"+Math.floor(rendered_panel.offsetTop));
+	const rendered_panel_pos = rendered_panel.getBoundingClientRect();
+
+	// Calculate the top and left positions for each cell
+	const top = parent_container_pos.top - rendered_panel_pos.top;
+	const left = (parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left;
+	rendered_panel.setAttribute("data-tippy-content", "x:"+Math.floor(left)+",y:"+Math.floor(top));
 });
 
 
