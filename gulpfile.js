@@ -15,9 +15,9 @@ gulp.task('browserSync', function() {
 
 // Gulp Watch Task
 gulp.task('watch', ['browserSync'], function () {
-  gulp.watch('./dist/app.css').on('change', browserSync.reload);
-  gulp.watch('./dist/app.js').on('change', browserSync.reload);
-  gulp.watch('./dist/index.html').on('change', browserSync.reload);
+  gulp.watch('./docs/app.css').on('change', browserSync.reload);
+  gulp.watch('./docs/app.js').on('change', browserSync.reload);
+  gulp.watch('./docs/index.html').on('change', browserSync.reload);
 });
 
 // Gulp Default Task
