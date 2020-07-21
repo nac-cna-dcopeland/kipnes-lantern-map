@@ -7,7 +7,6 @@
     "browser-sync": "^2.26.10",
     "express": "^4.17.1",
     "gulp": "^3.9.1",
-    "html-tablify": "^2.0.2",
     "tippy.js": "^6.2.5"
   },
   "scripts": {
