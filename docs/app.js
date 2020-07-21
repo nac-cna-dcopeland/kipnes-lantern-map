@@ -76,7 +76,7 @@ var panel_groups = [
 		config : {
 			rows: 7,
 			panels:["I","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E"],
-			offset: 17
+			offset: 18
 		}
 	},
 	{
@@ -84,7 +84,7 @@ var panel_groups = [
 		config : {
 			rows: 1,
 			panels:["spacerRow8"],
-			offset: 377
+			offset: 477
 		}
 	},
 	{
@@ -92,7 +92,7 @@ var panel_groups = [
 		config : {
 			rows: 2,
 			panels:["O","spacerCol8","K","J","spacerCol8","K","Q","spacerCol8","L","J","spacerCol8","K","J","spacerCol8","M"],
-			offset: 377
+			offset: 477
 		}
 	},
 	{
@@ -100,7 +100,7 @@ var panel_groups = [
 		config : {
 			rows: 1,
 			panels:["spacerRow8"],
-			offset: 377
+			offset: 477
 		}
 	},
 	{
@@ -108,7 +108,7 @@ var panel_groups = [
 		config : {
 			rows: 8,
 			panels:["P","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","N"],
-			offset: 377
+			offset: 477
 		}
 	}
 ];
