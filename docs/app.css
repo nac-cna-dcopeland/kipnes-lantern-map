@@ -35,7 +35,7 @@ table td{
 	overflow: hidden;
 	text-overflow: clip;
 	white-space: nowrap;
-	background-color: lemonchiffon;
+	background-color: yellow;
 }
 table td .panel-name{
 	width: 100%;
@@ -63,6 +63,9 @@ table td.spacer-row-col{
 	height: auto;
 }
 table td.spacer-col{
-	background-color: aqua;
+	background-color: cyan;
 	font-size: 0.2em;
-}
+}.tippy-content{
+	font-size: 1.2em;
+	padding: 0.4em 0.8em;
+  }

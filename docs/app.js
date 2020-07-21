@@ -59,7 +59,7 @@ var panel_groups = [
 		name: "row-1",
 		config : {
 			rows: 7,
-			panels:["F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E"],
+			panels:["F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E"],
 			offset: 0
 		}
 	},
@@ -75,7 +75,7 @@ var panel_groups = [
 		name: "row-2",
 		config : {
 			rows: 7,
-			panels:["I","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E"],
+			panels:["I","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E"],
 			offset: 17
 		}
 	},
@@ -91,7 +91,7 @@ var panel_groups = [
 		name: "row-3",
 		config : {
 			rows: 2,
-			panels:["O","spacerCol8","K","spacerCol8","J","spacerCol8","K","spacerCol8","Q","spacerCol8","L","spacerCol8","J","spacerCol8","K","spacerCol8","J","spacerCol8","M"],
+			panels:["O","spacerCol8","K","J","spacerCol8","K","Q","spacerCol8","L","J","spacerCol8","K","J","spacerCol8","M"],
 			offset: 377
 		}
 	},
@@ -107,7 +107,7 @@ var panel_groups = [
 		name: "row-4",
 		config : {
 			rows: 8,
-			panels:["P","spacerCol8","H","spacerCol8","G","spacerCol8","H","spacerCol8","E","spacerCol8","F","spacerCol8","G","spacerCol8","H","spacerCol8","G","spacerCol8","N"],
+			panels:["P","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","N"],
 			offset: 377
 		}
 	}
@@ -141,16 +141,19 @@ function build_table(panel){
 	var id = '<table style="'+styleAttr+'" id="'+panel.name+'" class="'+tblClass+'"><tbody>';
 	var placeholder='10';
 	var tr='';
+	//console.log(typeof(panel.config.rows));
 	for(var i=0;i<panel.config.rows;i++){
-		tr += '<tr>';
+		tr = '<tr>';
 		var j;
 		var offset = 0;
 		for(j in panel.config.panels){
-			console.log(j);
+			//console.log("hello-1");
 			var panel_type = panel.config.panels[j];
 			var panel_dimension;
+			// is not spacer cell?
 			if (panel_type.indexOf("spacerCol") == -1){
 				//console.log(panel_dimensions[panel_type].width);
+				// is first cell in row?
 				if (j == 0){
 					offset = panel.config.offset;
 					var panelHeight;
@@ -159,16 +162,20 @@ function build_table(panel){
 						tr += '<td class="lantern-panel lantern-panel-offset noborder" width="'+offset+'" height="'+panelHeight+'"></td>';
 					}
 				}
+				// is blank row of spacers?
 				if (panel.name.indexOf("spacer-row") >= 0){
 					tr += '<td class="lantern-panel noborder spacer-row-col spacer-col" width="100%" height="'+getSpacerSize(panel_type)+'"></td>';
 				} else {
 					tr += '<td class="lantern-panel" style="max-width:'+panel_dimensions[panel_type].width+'px;" width="'+panel_dimensions[panel_type].width+'" height="'+panel_dimensions[panel_type].height+'">'+panel.config.panels[j]+'</td>';
 				}
 			} else {
+				// is spacer cell
+				//console.log("hello-3");
 				var panelWidth;
 				panelWidth = getSpacerSize(panel_type);
 				tr += '<td class="lantern-panel noborder spacer-col" style="max-width:'+panelWidth+'px;" width="'+panelWidth+'">'+panel.config.panels[j]+'</td>';
 			}
+			//console.log("hello-4");
 		}
 		tr +='</tr>';
 		id += tr;
@@ -181,6 +188,7 @@ const panel_groups_each = Object.entries(panel_groups);
 
 for (const [panel_key, panel] of panel_groups_each) {
 	//console.log(panel_config,panel);
+	console.log("test1");
 	build_table(panel);
 }
 
@@ -195,12 +203,12 @@ rendered_panels.forEach(rendered_panel => {
 	// Calculate the top and left positions for each cell
 	const top = parent_container_pos.top - rendered_panel_pos.top;
 	const left = (parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left;
-	rendered_panel.setAttribute("data-tippy-content", "x:"+Math.floor(left)+",y:"+Math.floor(top));
+	rendered_panel.setAttribute("data-tippy-content", "x : "+Math.abs(Math.floor(left))+", y : "+Math.abs(Math.floor(top)));
 });
 
 const widest_table = document.querySelector("#row-1");
 const widest_table_styles = window.getComputedStyle(widest_table);
-console.log(widest_table_styles.width);
+//console.log(widest_table_styles.width);
 document.body.style.width = widest_table_styles.width;
 
 tippy('.lantern-panel', {
