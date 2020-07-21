@@ -53,10 +53,10 @@ table td.lantern-panel-offset{
 }
 table.spacer-row{
 	width: 100%;
-	max-width: 1864px;
+	max-width: 1768px;
 }
 table#spacer-row-2,table#spacer-row-3{
-	max-width: 846px;
+	max-width: 814px;
 }
 table td.spacer-row-col{
 	width: 100%;
