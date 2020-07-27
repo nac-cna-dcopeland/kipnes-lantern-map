@@ -18,7 +18,7 @@ let panel_dimensions = {
 		"height":36
 	},
 	I:{
-		"width":48,
+		"width":66,
 		"height":36
 	},
 	J:{
@@ -148,7 +148,7 @@ let panel_groups = [
 				{shape:"H"},
 				{shape:"E"}
 			],
-			offset: 18
+			offset: 0
 		}
 	},
 	{
@@ -323,7 +323,7 @@ function build_table(panel){
 					var panelHeight;
 					if (panel.name.indexOf("spacer-row") == -1 && offset >= 1){
 						panelHeight = panel_dimensions[panel_type].height;
-						tr += '<td class="lantern-panel lantern-panel-offset noborder" width="'+offset+'" height="'+panelHeight+'"></td>';
+						tr += '<td class="lantern-panel lantern-panel-offset noborder" width="'+offset+'" height="'+panelHeight+'" data-panel-id="Spacer cell"></td>';
 					}
 				}
 				// is blank row of spacers?
@@ -332,6 +332,7 @@ function build_table(panel){
 								class="lantern-panel noborder spacer-row-col spacer-col" \
 								width="100%" \
 								height="'+getSpacerSize(panel_type)+'"\
+								data-panel-id="Spacer cell"\
 							></td>';
 				} else {
 					tr += '<td \
@@ -350,6 +351,7 @@ function build_table(panel){
 							class="lantern-panel noborder spacer-col" \
 							style="max-width:'+panelWidth+'px;" \
 							width="'+panelWidth+'"\
+							data-panel-id="Spacer cell"\
 						>'+panel_type+'</td>';
 			}
 			//console.log("hello-4");
@@ -420,11 +422,7 @@ rendered_panels.forEach(rendered_panel => {
 	// Calculate the top and left positions for each cell
 	const top = Math.abs(Math.floor(parent_container_pos.top - rendered_panel_pos.top));
 	const left = Math.abs(Math.floor((parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left));
-	if (rendered_panel_class.indexOf("spacer-col") >= 0){
-		var tippy_panel_id = "Spacer cell";
-	} else {
-		var tippy_panel_id = rendered_panel.getAttribute("data-panel-id");
-	}
+	var tippy_panel_id = rendered_panel.getAttribute("data-panel-id");
 	rendered_panel.setAttribute("data-tippy-content", tippy_panel_id+"<br>"+"x : "+left+", y : "+top);
 });
 
