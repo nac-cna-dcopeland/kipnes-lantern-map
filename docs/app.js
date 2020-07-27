@@ -59,7 +59,43 @@ var panel_groups = [
 		name: "row-1",
 		config : {
 			rows: 7,
-			panels:["F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E"],
+			panels:[
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"}
+			],
 			offset: 0
 		}
 	},
@@ -75,7 +111,43 @@ var panel_groups = [
 		name: "row-2",
 		config : {
 			rows: 7,
-			panels:["I","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","H","E"],
+			panels:[
+				{id:"1--",shape:"I"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1-1-1",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"}
+			],
 			offset: 18
 		}
 	},
@@ -91,7 +163,23 @@ var panel_groups = [
 		name: "row-3",
 		config : {
 			rows: 2,
-			panels:["O","spacerCol8","K","J","spacerCol8","K","Q","spacerCol8","L","J","spacerCol8","K","J","spacerCol8","M"],
+			panels:[
+				{id:"1--",shape:"O"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"K"},
+				{id:"1--",shape:"J"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"K"},
+				{id:"1--",shape:"Q"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"L"},
+				{id:"1--",shape:"J"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"K"},
+				{id:"1--",shape:"J"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"M"}
+			],
 			offset: 477
 		}
 	},
@@ -107,11 +195,28 @@ var panel_groups = [
 		name: "row-4",
 		config : {
 			rows: 8,
-			panels:["P","spacerCol8","H","G","spacerCol8","H","E","spacerCol8","F","G","spacerCol8","H","G","spacerCol8","N"],
+			panels:[
+				{id:"1--",shape:"P"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"E"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"F"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"H"},
+				{id:"1--",shape:"G"},
+				{id:"1--",shape:"spacerCol8"},
+				{id:"1--",shape:"N"}
+			],
 			offset: 477
 		}
 	}
 ];
+
 var spacerCol4 = 4, spacerRow4 = 4;
 var spacerCol5 = 5, spacerRow5 = 5;
 var spacerCol6 = 6, spacerRow6 = 6;
@@ -147,9 +252,26 @@ function build_table(panel){
 		var j;
 		var offset = 0;
 		for(j in panel.config.panels){
-			//console.log("hello-1");
-			var panel_type = panel.config.panels[j];
-			var panel_dimension;
+			//console.log(toString(panel.config.panels[j].shape));
+			var panel_type;
+			var panel_id;
+
+			if (panel.name.indexOf("spacer-row") == -1){
+				const current_panel = Object.entries(panel.config.panels[j]);
+
+				for (const [key, val] of current_panel) {
+					if (key == "shape"){
+						panel_type = val;
+					} else if (key == "id"){
+						panel_id = val;
+					}
+				}
+			} else{
+				panel_type = panel.config.panels[j];
+				panel_id = "spacer";
+			}
+
+			console.log(panel_type);
 			// is not spacer cell?
 			if (panel_type.indexOf("spacerCol") == -1){
 				//console.log(panel_dimensions[panel_type].width);
@@ -164,16 +286,30 @@ function build_table(panel){
 				}
 				// is blank row of spacers?
 				if (panel.name.indexOf("spacer-row") >= 0){
-					tr += '<td class="lantern-panel noborder spacer-row-col spacer-col" width="100%" height="'+getSpacerSize(panel_type)+'"></td>';
+					tr += '<td \
+								class="lantern-panel noborder spacer-row-col spacer-col" \
+								width="100%" \
+								height="'+getSpacerSize(panel_type)+'"\
+							></td>';
 				} else {
-					tr += '<td class="lantern-panel" style="max-width:'+panel_dimensions[panel_type].width+'px;" width="'+panel_dimensions[panel_type].width+'" height="'+panel_dimensions[panel_type].height+'">'+panel.config.panels[j]+'</td>';
+					tr += '<td \
+								class="lantern-panel" \
+								style="max-width:'+panel_dimensions[panel_type].width+'px;" \
+								width="'+panel_dimensions[panel_type].width+'" \
+								height="'+panel_dimensions[panel_type].height+'"\
+								data-panel_id="'+panel_id+'"\
+							>'+panel_type+'</td>';
 				}
 			} else {
 				// is spacer cell
 				//console.log("hello-3");
 				var panelWidth;
 				panelWidth = getSpacerSize(panel_type);
-				tr += '<td class="lantern-panel noborder spacer-col" style="max-width:'+panelWidth+'px;" width="'+panelWidth+'">'+panel.config.panels[j]+'</td>';
+				tr += '<td \
+							class="lantern-panel noborder spacer-col" \
+							style="max-width:'+panelWidth+'px;" \
+							width="'+panelWidth+'"\
+						>'+panel.config.panels[j]+'</td>';
 			}
 			//console.log("hello-4");
 		}
@@ -201,9 +337,10 @@ rendered_panels.forEach(rendered_panel => {
 	const rendered_panel_pos = rendered_panel.getBoundingClientRect();
 
 	// Calculate the top and left positions for each cell
-	const top = parent_container_pos.top - rendered_panel_pos.top;
-	const left = (parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left;
-	rendered_panel.setAttribute("data-tippy-content", "x : "+Math.abs(Math.floor(left))+", y : "+Math.abs(Math.floor(top)));
+	const top = Math.abs(Math.floor(parent_container_pos.top - rendered_panel_pos.top));
+	const left = Math.abs(Math.floor((parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left));
+	const tippy_panel_id = rendered_panel.getAttribute("data-panel_id");
+	rendered_panel.setAttribute("data-tippy-content", /*tippy_panel_id+"<br>"+*/"x : "+left+", y : "+top);
 });
 
 const widest_table = document.querySelector("#row-1");
@@ -213,5 +350,6 @@ document.body.style.width = widest_table_styles.width;
 
 tippy('.lantern-panel', {
 	arrow: false,
-	placement: 'top'
+	placement: 'top',
+	allowHTML: true
 });
