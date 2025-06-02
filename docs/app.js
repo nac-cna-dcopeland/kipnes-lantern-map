@@ -410,6 +410,18 @@ for (const table of tables) {
 	}  
 }
 
+let isBlinking = false;
+let blinkId = "";
+const searchParams = new URLSearchParams(window.location.search);
+
+// Check the query for blink param
+const blink = searchParams.get('blink');
+if(blink != undefined){
+	console.log("Blink panel ID value is: " + blink);
+	isBlinking = true;
+	blinkId = blink;
+}
+
 const rendered_panels = document.querySelectorAll(".lantern-panel");
 const parent_container = document.querySelector(".bounding-box");
 const parent_container_styles = window.getComputedStyle(parent_container);
@@ -423,6 +435,18 @@ rendered_panels.forEach(rendered_panel => {
 	const top = Math.abs(Math.floor(parent_container_pos.top - rendered_panel_pos.top));
 	const left = Math.abs(Math.floor((parent_container_pos.left + parseFloat(parent_container_styles.paddingLeft)) - rendered_panel_pos.left));
 	var tippy_panel_id = rendered_panel.getAttribute("data-panel-id");
+	console.log(isBlinking);
+	if(isBlinking){
+	//console.log("Blink panel ID value is: " + blink);
+		if (tippy_panel_id == blinkId){ rendered_panel.classList.add("blink"); }
+		if (tippy_panel_id == "1-82"){
+			var a = document.createElement('a');
+			a.href = "https://www.youtube.com/watch?v=V1WhOWvlcjI";
+			a.target = "_blank";
+			a.classList.add("link");
+			rendered_panel.appendChild(a);
+  		}
+	}
 	rendered_panel.setAttribute("data-tippy-content", tippy_panel_id+"<br>"+"x : "+left+", y : "+top);
 });
 
